@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="acction">
+	
+	<insert id="addNewMember" parameterType="java.util.HashMap">
+		insert into account values(#{id}, #{pass}, #{name}, #{gender})
+	</insert>
+	
+	<select id="getMemberFile" resultType="java.util.HashMap" parameterType="java.util.String">
+		select * from account where id	= #{id}
+	</select>
+	
+	<update id="updatePassword" parameterType="java.util.HashMap">
+		update account set pass = #{pass} where id = #{id}
+	</update>
+	
+	
+	
+	
+	
+	
+
+</mapper>
