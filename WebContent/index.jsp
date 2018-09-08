@@ -14,7 +14,7 @@
 </div>
 </form>
 	 <a href="<%=application.getContextPath() %>/log/logaction.jsp"><button type="submit" style="height: 60px; width: 100px;">로  그  인</button></a>
-	 <a href="<%=application.getContextPath() %>/join/joinin.jsp"><button type="submit" style="height: 60px; width: 100px;">회 원 가 입</button></a>
+	 <a href="<%=application.getContextPath() %>/joinin.jsp"><button type="submit" style="height: 60px; width: 100px;">회 원 가 입</button></a>
 
 	
 </p>

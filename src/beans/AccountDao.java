@@ -2,6 +2,7 @@ package beans;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
@@ -32,7 +33,18 @@ public class AccountDao {
 		}
 	}
 	
-	public boolean updatePassword(Map p) {
+	public List<Map> getmember(String id) { // 멤버 정보 가져오기
+		SqlSession sql = factor.openSession();
+		try {
+			List<Map> member = sql.selectList("account.getMemberFile",id);
+			return null;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public boolean updatePassword(Map p) { // 패스 워드 변경 시 사용할 메서드
 		SqlSession sql = factor.openSession();
 		try {
 			int b = sql.update("account.updatePassword",p);
@@ -44,6 +56,21 @@ public class AccountDao {
 				check = false;
 			}
 			return check;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public boolean selectId(String id) { // 아이디 중복확인을 위한 메서드
+		SqlSession sql = factor.openSession();
+		try {
+			String selId = sql.selectOne("account.getMemberId",id);
+			if(selId==null) {
+				return true;
+			}else {
+				return false;
+			}
 		}catch(Exception e) {
 			e.printStackTrace();
 			return false;

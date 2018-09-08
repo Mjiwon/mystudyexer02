@@ -10,7 +10,7 @@
 		<li> 비밀번호는 4자 이상으로 설정&emsp;</li>   
 	</ul>
 	</font>
-	<form action="joinaction.jsp" method="post" enctype="multipart/form-data">
+	<form action="/mystudyexer02/join/joinaction.jsp" method="post" >
 	<div align="center" >	
 		<div style="width: 250px; text-align: center; padding: 20px;" >
 				이름 : <br><input type="text" name="name" style="padding: 5px;" placeholder="이름을 입력해주세요."> <br> <br>
@@ -21,7 +21,8 @@
 				<input type="radio" style="font-size: 16px; padding: 5px" name="gender" value="F"/><span style="font-size: 16px; padding: 5px">여성</span>
 		</div>
 	</div>
+	<input type="submit" value="회원가입">
 	</form>
-	<a href="<%=application.getContextPath() %>/join/joinaction.jsp"><button type="submit">회 원 가 입</button></a>
+	
 	<a href="<%=application.getContextPath() %>"><button type="submit">로  그  인</button></a>
 <%@ include file="/layout/lower.jspf" %>

@@ -6,13 +6,13 @@
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
 				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
-				<property name="url" value="jdbc:oracle:thin:@jiwoni.mockingu.com:1521:xe" />
-				<property name="username" value="dev" />
+				<property name="url" value="jdbc:oracle:thin:@54.180.26.126:1521:xe" />
+				<property name="username" value="study" />
 				<property name="password" value="oracle" />
 			</dataSource>
 		</environment>
 	</environments>
 	<mappers>
-			<mapper resource="mappers/mapper-accountn.xml"/>			
+			<mapper resource="mappers/mapper-account.xml"/>			
 	</mappers>
 </configuration>
