@@ -17,4 +17,10 @@
 		<listener-class>handler.SessionHandler</listener-class>
 	</listener>
 	
+	<filter>
+		<filter-name>a</filter-name>
+		<filter-class>filters.FirstFilter</filter-class>
+	</filter>
+	
+
 </web-app>

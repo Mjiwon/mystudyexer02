@@ -37,7 +37,7 @@ public class AccountDao {
 		SqlSession sql = factor.openSession();
 		try {
 			List<Map> member = sql.selectList("account.getMemberFile",id);
-			return null;
+			return member;
 		}catch(Exception e) {
 			e.printStackTrace();
 			return null;
