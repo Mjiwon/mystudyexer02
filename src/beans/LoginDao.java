@@ -12,13 +12,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class LoginDao {
-	SqlSessionFactory factory;
+public class LoginDao extends MybatisDao{
 	
 	public LoginDao() throws IOException{
-		SqlSessionFactoryBuilder sfb = new SqlSessionFactoryBuilder();
-		InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
-		factory = sfb.build(is);
+		super();
 	}
 	
 	public int addLogingMember(String id) {

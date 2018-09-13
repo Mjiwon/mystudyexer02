@@ -13,7 +13,7 @@
 			자동 로그인 : <input type="checkbox" name="freepass">
 	</div>
 </div>
-	<a href="<%=application.getContextPath() %>/joinin.jsp"><button type="submit" style="height: 60px; width: 100px;">회 원 가 입</button></a>
+	<a href="<%=application.getContextPath() %>/joinin.jsp"><button type="button" style="height: 60px; width: 100px;">회 원 가 입</button></a>
  	<button type="submit" style="height: 60px; width: 100px;">로  그  인</button>
 </form>
 	

@@ -10,17 +10,14 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class AccountDao {
-	SqlSessionFactory factor;
+public class AccountDao extends MybatisDao{
 	
 	public AccountDao() throws IOException{
-		SqlSessionFactoryBuilder sfb = new SqlSessionFactoryBuilder();
-		InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
-		factor = sfb.build(is);
+		super();
 	}
 	
 	public int addNewMember(Map p) { // 회원가입 시 회원정보 저장하기.
-		SqlSession sql = factor.openSession();
+		SqlSession sql = factory.openSession();
 		try {
 			int r = sql.insert("account.addNewMember",p);
 			if(r==1) {
@@ -34,7 +31,7 @@ public class AccountDao {
 	}
 	
 	public List<Map> getmember(String id) { // 멤버 정보 가져오기
-		SqlSession sql = factor.openSession();
+		SqlSession sql = factory.openSession();
 		try {
 			List<Map> member = sql.selectList("account.getMemberFile",id);
 			return member;
@@ -45,7 +42,7 @@ public class AccountDao {
 	}
 	
 	public boolean updatePassword(Map p) { // 패스 워드 변경 시 사용할 메서드
-		SqlSession sql = factor.openSession();
+		SqlSession sql = factory.openSession();
 		try {
 			int b = sql.update("account.updatePassword",p);
 			boolean check;
@@ -63,7 +60,7 @@ public class AccountDao {
 	}
 	
 	public boolean selectId(String id) { // 아이디 중복확인을 위한 메서드
-		SqlSession sql = factor.openSession();
+		SqlSession sql = factory.openSession();
 		try {
 			String selId = sql.selectOne("account.getMemberId",id);
 			if(selId==null) {
